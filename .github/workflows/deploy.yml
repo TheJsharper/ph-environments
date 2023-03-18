@@ -12,7 +12,7 @@ jobs:
       MONGODB_CLUSTER_ADDRESS: github-actions.y4aqk3u.mongodb.net
       MONGODB_USERNAME: pedrosalomon   
       MONGODB_PASSWORD: HIdZPGAyrDSjczUh
-      PORT:8080
+      PORT: 8080
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
