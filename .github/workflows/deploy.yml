@@ -10,8 +10,8 @@ jobs:
   test:
     env: 
       MONGODB_CLUSTER_ADDRESS: github-actions.y4aqk3u.mongodb.net
-      MONGODB_USERNAME: pedrosalomon   
-      MONGODB_PASSWORD: HIdZPGAyrDSjczUh
+      MONGODB_USERNAME: ${{secrets.MONGODB_USERNAME}}   
+      MONGODB_PASSWORD: ${{secrets.MONGODB_PASSWORD}}   
       PORT: 8080
     runs-on: ubuntu-latest
     steps:
@@ -29,11 +29,11 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "Application listing {{env.PORT}}"
+        run: echo "Application listing ${{env.PORT}}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Output information
         run: |        
-          echo "MONGODB_DB_NAME: {{MONGODB_USERNAME}}"
+          echo "MONGODB_DB_NAME: ${{MONGODB_USERNAME}}"
