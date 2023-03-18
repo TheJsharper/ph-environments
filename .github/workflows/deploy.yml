@@ -36,4 +36,4 @@ jobs:
     steps:
       - name: Output information
         run: |        
-            echo "database name  ${{ MONGODB_DB_USERNAME}}"
+            echo "database name  ${{ env.MONGODB_DB_USERNAME}}"
